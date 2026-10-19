@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Baran Eskili · Kanun &amp; Müzik Prodüktörü</title>
-<meta name="description" content="Baran Eskili: kanun sanatçısı ve müzik prodüktörü. Kanun doğaçlaması, makam müziği ve elektronik prodüksiyon. Konser, festival, inziva ve seremoni için booking.">
+<meta name="description" content="Baran Eskili: kanun sanatçısı ve müzik prodüktörü. Kanun doğaçlaması, makam müziği ve elektronik prodüksiyon.">
 <meta property="og:title" content="Baran Eskili · Kanun &amp; Müzik Prodüktörü">
-<meta property="og:description" content="Kanun doğaçlaması, makam müziği ve elektronik prodüksiyon. İstanbul.">
+<meta property="og:description" content="Baran Eskili: kanun sanatçısı ve müzik prodüktörü. Kanun doğaçlaması, makam müziği ve elektronik prodüksiyon.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baraneskili.github.io/">
 <meta property="og:image" content="https://baraneskili.github.io/img/baran-kanun.jpg">
@@ -15,196 +15,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@400;500;600&display=swap">
-<style>
-/* Layout: gece sahnesi. Tek koyu dünya (ateş, mum, pirinç mandal). Kanun telleri sayfanın ana çizgisi: hero'da titreşen teller, bölümler arasında ince tel çizgileri. */
-:root {
-  --night: #17110f;        /* zemin: ceviz kabuğu gecesi */
-  --night-2: #211815;      /* yükseltilmiş yüzey */
-  --line: #3a2c25;         /* tel / ayraç */
-  --bone: #eee4d4;         /* ana metin */
-  --bone-dim: #b9a993;     /* ikincil metin */
-  --brass: #d6a24a;        /* mandal pirinci, tek vurgu */
-  --brass-dim: #8f6a33;
-  --display: "Bodoni Moda", "Didot", Georgia, serif;
-  --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --mono: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif; /* etiketler: gövde yazı tipi, harf aralıklı */
-  --step--1: .8125rem; --step-0: 1rem; --step-1: 1.25rem; --step-2: 1.75rem; --step-3: 2.6rem; --step-4: clamp(3rem, 9vw, 6.5rem);
-  color-scheme: dark;
-}
-* { box-sizing: border-box; }
-body { margin: 0; }
-img { max-width: 100%; }
-:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { background: var(--night); color: var(--bone); font-family: var(--body); font-size: var(--step-0); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--night); }
-a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
-.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.eyebrow { font-family: var(--mono); font-size: var(--step--1); letter-spacing: .14em; text-transform: uppercase; color: var(--brass); }
-h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.05; }
-h2 { font-size: var(--step-3); }
-h3 { font-size: var(--step-2); }
-p { margin: 0; }
-.prose { max-width: 62ch; color: var(--bone-dim); display: grid; gap: 1em; }
-.prose strong { color: var(--bone); font-weight: 500; }
-[data-l="en"] { display: none; }
-html[lang="en"] [data-l="tr"] { display: none; }
-html[lang="en"] [data-l="en"] { display: revert; }
-
-/* Nav */
-.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--night) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-.brand { font-family: var(--display); font-size: var(--step-1); text-decoration: none; white-space: nowrap; }
-.nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: var(--step--1); letter-spacing: .06em; text-transform: uppercase; }
-.nav ul a { text-decoration: none; color: var(--bone-dim); }
-.nav ul a:hover { color: var(--bone); }
-.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; flex: none; }
-.lang button { background: none; border: 0; color: var(--bone-dim); font: 500 var(--step--1) var(--mono); padding: 4px 10px; cursor: pointer; }
-.lang button[aria-pressed="true"] { background: var(--brass); color: var(--night); }
-@media (max-width: 820px) { .nav ul { display: none; } }
-
-/* Hero */
-.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
-#strings { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.hero .wrap { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: end; padding-block: 72px 64px; }
-.hero h1 { font-size: var(--step-4); letter-spacing: -.01em; }
-.hero h1 em { font-style: italic; color: var(--brass); }
-.hero .roles { font-family: var(--mono); font-size: var(--step--1); letter-spacing: .12em; text-transform: uppercase; color: var(--bone-dim); margin-top: 18px; }
-.hero .lede { font-size: var(--step-1); max-width: 34ch; margin-top: 28px; color: var(--bone); line-height: 1.45; }
-.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: .95rem; border: 1px solid var(--brass); }
-.btn.solid { background: var(--brass); color: var(--night); }
-.btn.ghost { color: var(--brass); }
-.btn:hover { filter: brightness(1.08); }
-.hero figure { margin: 0; position: relative; }
-.hero figure img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 20%; border-radius: 2px; }
-.hero figcaption { font-family: var(--mono); font-size: .72rem; color: var(--bone-dim); margin-top: 8px; letter-spacing: .06em; }
-@media (max-width: 820px) {
-  .hero .wrap { grid-template-columns: 1fr; padding-block: 40px 40px; gap: 32px; }
-  .hero figure { max-width: 420px; }
-}
-
-section { padding-block: 88px; border-bottom: 1px solid var(--line); }
-@media (max-width: 820px) { section { padding-block: 60px; } }
-.head { display: grid; gap: 14px; margin-bottom: 44px; }
-
-/* About */
-.about { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-.about > * { min-width: 0; }
-.about img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 2px; }
-.comma { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 22px; display: grid; gap: 14px; }
-.comma .scale { display: grid; grid-template-columns: repeat(9, 1fr); gap: 4px; max-width: 360px; }
-.comma .scale span { height: 26px; border-left: 1px solid var(--brass-dim); position: relative; }
-.comma .scale span:first-child { border-left-color: var(--brass); border-left-width: 2px; }
-.comma .scale span.p4 { border-left-color: var(--brass); }
-.comma .legend { font-family: var(--mono); font-size: .75rem; color: var(--bone-dim); }
-@media (max-width: 820px) { .about { grid-template-columns: 1fr; gap: 36px; } .about img { max-width: 420px; } }
-
-/* Sets */
-.sets { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.set { background: var(--night); padding: 36px; display: grid; gap: 16px; align-content: start; min-width: 0; }
-.set .meta { font-family: var(--mono); font-size: .75rem; color: var(--brass); letter-spacing: .1em; text-transform: uppercase; }
-.set h3 { font-size: var(--step-3); }
-.set h3 small { display: block; font-family: var(--body); font-size: var(--step-0); color: var(--bone-dim); margin-top: 8px; letter-spacing: 0; }
-.set .word { font-family: var(--display); font-style: italic; color: var(--bone); }
-.set ul { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.set li { font-size: .8rem; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--bone-dim); }
-@media (max-width: 820px) { .sets { grid-template-columns: 1fr; } .set { padding: 26px 20px; } }
-
-/* Listen: çalma listesi. Satırın tamamı Spotify'a gider; yeni şarkı = yeni <li>. */
-#dinle .head { margin-bottom: 24px; }
-.listen { display: grid; grid-template-columns: 1fr auto; gap: 24px 48px; align-items: start; }
-.listen > * { min-width: 0; }
-.tracks { list-style: none; margin: 0; padding: 0; max-width: 720px; border-top: 1px solid var(--line); counter-reset: tr; }
-.track { display: grid; grid-template-columns: 1fr auto; align-items: center; border-bottom: 1px solid var(--line); counter-increment: tr; }
-.track .row { display: grid; grid-template-columns: 2.25rem 1fr auto; gap: 12px; align-items: center; padding: 11px 8px; text-decoration: none; min-width: 0; border-radius: 2px; }
-.track .row::before { content: counter(tr, decimal-leading-zero); font-family: var(--mono); font-size: .75rem; color: var(--brass-dim); font-variant-numeric: tabular-nums; }
-.track .row:hover { background: var(--night-2); }
-.track .row:hover::before { content: "▶"; color: var(--brass); }
-.track .t { font-weight: 500; line-height: 1.3; }
-.track .who { font-size: .8rem; color: var(--bone-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.track .row > span:not(.who) { min-width: 0; }
-.track .go { font-family: var(--mono); font-size: .7rem; color: var(--brass); }
-.track .yt { font-family: var(--mono); font-size: .7rem; color: var(--bone-dim); text-decoration: none; padding: 11px 8px; }
-.track .yt:hover { color: var(--brass); }
-.platforms { display: grid; gap: 10px; }
-.platforms .btn { padding: 9px 16px; font-size: .85rem; }
-@media (max-width: 820px) { .listen { grid-template-columns: 1fr; } .platforms { display: flex; flex-wrap: wrap; } .track .who { display: none; } }
-
-/* Gallery */
-.gallery { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 200px; gap: 8px; }
-.gallery figure { margin: 0; overflow: hidden; position: relative; }
-.gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s ease; }
-.gallery figure:hover img { transform: scale(1.03); }
-.gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 12px 10px; font-family: var(--mono); font-size: .7rem; letter-spacing: .05em; background: linear-gradient(transparent, rgb(0 0 0 / .65)); color: var(--bone); }
-.g1 { grid-column: span 4; grid-row: span 2; } .g2 { grid-column: span 2; grid-row: span 2; }
-.g3, .g4, .g5 { grid-column: span 2; }
-@media (max-width: 820px) { .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; } .g1 { grid-column: span 2; } .g2 { grid-column: span 1; grid-row: span 2; } .g3, .g4, .g5 { grid-column: span 1; } .g5 { grid-column: span 2; } }
-@media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } }
-
-/* Humanka */
-.humanka { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
-.humanka > * { min-width: 0; }
-.humanka img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 2px; }
-.members { font-family: var(--mono); font-size: .8rem; color: var(--bone-dim); line-height: 1.9; }
-@media (max-width: 820px) { .humanka { grid-template-columns: 1fr; gap: 32px; } }
-
-/* Shows */
-.shows { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0 32px; }
-.show { display: grid; grid-template-columns: 5.5rem 1fr; gap: 14px; padding-block: 14px; border-top: 1px solid var(--line); }
-.show time { font-family: var(--mono); font-size: .8rem; color: var(--brass); font-variant-numeric: tabular-nums; padding-top: 3px; }
-.show b { font-weight: 500; display: block; }
-.show span { font-size: .85rem; color: var(--bone-dim); }
-.show .tag { font-family: var(--mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--brass-dim); }
-
-/* Workshops + rider */
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-.two > * { min-width: 0; }
-.ws { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
-.ws li { border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 6px; }
-.ws b { font-family: var(--display); font-weight: 400; font-size: var(--step-1); }
-.ws span { color: var(--bone-dim); font-size: .95rem; }
-details { border: 1px solid var(--line); border-radius: 4px; background: var(--night-2); }
-summary { cursor: pointer; padding: 16px 18px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
-summary::-webkit-details-marker { display: none; }
-summary::after { content: "+"; font-family: var(--mono); color: var(--brass); }
-details[open] summary::after { content: "–"; }
-.rider { padding: 0 18px 18px; font-family: var(--mono); font-size: .78rem; color: var(--bone-dim); display: grid; gap: 8px; }
-.rider div { display: grid; grid-template-columns: 6.5rem 1fr; gap: 10px; border-top: 1px dashed var(--line); padding-top: 8px; }
-.rider div b { color: var(--bone); font-weight: 500; }
-@media (max-width: 820px) { .two { grid-template-columns: 1fr; gap: 44px; } }
-
-/* Contact */
-.contact { border-bottom: 0; padding-block: 96px 72px; }
-.contact h2 { font-size: var(--step-4); }
-.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 30px; }
-.mail code { font-family: var(--display); font-size: var(--step-2); color: var(--bone); user-select: all; overflow-wrap: anywhere; }
-.copy { background: none; border: 1px solid var(--brass); color: var(--brass); border-radius: 999px; padding: 6px 14px; font: 500 .8rem var(--mono); cursor: pointer; }
-.socials { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 30px; font-size: .95rem; }
-.socials a { color: var(--bone-dim); text-decoration-color: var(--brass-dim); text-underline-offset: 4px; }
-.socials a:hover { color: var(--bone); }
-footer { padding-block: 26px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: .72rem; color: var(--bone-dim); }
-footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-
 <nav class="nav" aria-label="Ana menü">
   <div class="wrap">
-    <a class="brand" href="#top">Baran Eskili</a>
+    <a class="brand" href="./">Baran Eskili</a>
     <ul>
-      <li><a href="#hakkinda"><span data-l="tr">Hakkında</span><span data-l="en">About</span></a></li>
-      <li><a href="#setler"><span data-l="tr">Setler</span><span data-l="en">Sets</span></a></li>
-      <li><a href="#dinle"><span data-l="tr">Dinle</span><span data-l="en">Listen</span></a></li>
-      <li><a href="#galeri"><span data-l="tr">Galeri</span><span data-l="en">Gallery</span></a></li>
-      <li><a href="#sahneler"><span data-l="tr">Sahneler</span><span data-l="en">Shows</span></a></li>
+      <li><a href="./" aria-current="page"><span data-l="tr">Müzik</span><span data-l="en">Music</span></a></li>
+      <li><a href="yoga.html"><span data-l="tr">Yoga</span><span data-l="en">Yoga</span></a></li>
+      <li><a href="titresimsel-yolculuk.html"><span data-l="tr">Titreşimsel Yolculuk</span><span data-l="en">Sound Healing</span></a></li>
+      <li><a href="aile-dizilimi.html"><span data-l="tr">Aile Dizilimi</span><span data-l="en">Family Constellations</span></a></li>
+      <li><a href="su-calismasi.html"><span data-l="tr">Su Çalışması</span><span data-l="en">Water Therapy</span></a></li>
       <li><a href="#iletisim"><span data-l="tr">İletişim</span><span data-l="en">Contact</span></a></li>
     </ul>
-    <div class="lang" role="group" aria-label="Dil / Language">
-      <button type="button" id="lang-tr" aria-pressed="true">TR</button>
-      <button type="button" id="lang-en" aria-pressed="false">EN</button>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" id="lang-tr" aria-pressed="true">TR</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false"><span data-l="tr">Menü</span><span data-l="en">Menu</span></button>
     </div>
   </div>
 </nav>
@@ -213,9 +43,9 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <canvas id="strings" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <p class="eyebrow"><span data-l="tr">Solo · Kanun &amp; Canlı Elektronik · İstanbul</span><span data-l="en">Solo · Qanun &amp; Live Electronics · Istanbul</span></p>
+      <p class="eyebrow"><span data-l="tr">Kanun &amp; Canlı Elektronik · İstanbul&rsquo;dan dünyaya</span><span data-l="en">Qanun &amp; Live Electronics · From Istanbul to the world</span></p>
       <h1 style="margin-top:18px">Baran<br><em>Eskili</em></h1>
-      <p class="roles"><span data-l="tr">Kanun · Müzik Prodüktörü · Makam</span><span data-l="en">Qanun · Music Producer · Makam</span></p>
+      <p class="roles"><span data-l="tr">Kanun · Müzik Prodüktörü</span><span data-l="en">Qanun · Music Producer</span></p>
       <p class="lede">
         <span data-l="tr">Doğu'nun kadim tınısı, kendi ürettiğim elektronik setlerin üzerinde. Kanun doğaçlaması ve makam müziği.</span>
         <span data-l="en">The ancient resonance of the East, layered over self-produced electronic sets. Qanun improvisation and makam music.</span>
@@ -243,11 +73,13 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <div class="prose" data-l="tr">
           <p>Sekiz yaşında kanunla başladığı müzik yolculuğunda Baran, musiki cemiyeti korolarından sokaklara, oradan müzik topluluklarına uzandı. Geleneksel icrayı elektronik prodüksiyonla harmanlayarak <strong>kendine özgü bir ses dili</strong> geliştirdi.</p>
           <p>Bugün kendi ürettiği setlerin üzerine kanun doğaçlamaları ekleyerek Doğu'nun kadim tınısını çağdaş bir çerçevede yeniden yorumluyor. Makam müziği yapıyor; makamı hem kanununda hem elektronik prodüksiyonlarında kullanıyor.</p>
+          <p>Türkiye, Bali ve Tayland&rsquo;da sahne aldı; sıradaki durak Avrupa.</p>
           <p>Seremoni, inziva ve dans alanlarında evinde hisseden bir müzisyen. Aynı zamanda yoga ve hareket eğitmeni.</p>
         </div>
         <div class="prose" data-l="en">
           <p>Beginning his musical journey with the qanun at the age of eight, Baran travelled from music society choirs to the streets, and from there to musical collectives. Blending traditional performance with electronic production, he developed <strong>a sonic language of his own</strong>.</p>
           <p>Today he layers qanun improvisations over his self-produced sets, reinterpreting the ancient resonance of the East in a contemporary frame. He makes makam music and uses makam in both his qanun playing and his electronic productions.</p>
+          <p>He has performed in Türkiye, Bali and Thailand; Europe is next.</p>
           <p>He is at home in ceremony, retreat and dance spaces, and is also a yoga and movement teacher.</p>
         </div>
       </div>
@@ -259,7 +91,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <div class="wrap">
       <div class="head">
         <p class="eyebrow"><span data-l="tr">Canlı setler</span><span data-l="en">Live sets</span></p>
-        <h2><span data-l="tr">İki yolculuk, bir kanun</span><span data-l="en">Two journeys, one qanun</span></h2>
+        <h2><span data-l="tr">Dinginlikten dansa</span><span data-l="en">From stillness to dance</span></h2>
       </div>
       <div class="sets">
         <article class="set">
@@ -286,6 +118,10 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
       </div>
       <div class="listen">
       <ol class="tracks">
+        <li class="track">
+          <a class="row" href="https://open.spotify.com/track/3p7DjKAnCjapx9tFW3alb0" target="_blank" rel="noopener"><span class="t">Aqua Vitae</span><span class="who">Baran Eskili</span></a>
+          <span></span>
+        </li>
         <li class="track">
           <a class="row" href="https://open.spotify.com/track/2PJ138Dm6PtZzarAUG9Vmw" target="_blank" rel="noopener"><span class="t">Yasham</span><span class="who">Baran Eskili</span></a>
           <span></span>
@@ -366,7 +202,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         </div>
         <ul class="ws">
           <li><b><span data-l="tr">Makama ve kanuna giriş</span><span data-l="en">Introduction to makam and the qanun</span></b><span data-l="tr">Kanunu ve makam müziğini dinleyerek ve deneyerek tanımak.</span><span data-l="en">Getting to know the qanun and makam music by listening and trying.</span></li>
-          <li><b><span data-l="tr">Canlı kanunla yoga</span><span data-l="en">Yoga with live qanun</span></b><span data-l="tr">Pratiğe eşlik eden canlı doğaçlama; ders ve müzik aynı kişiden.</span><span data-l="en">Live improvisation accompanying the practice, with class and music from the same person.</span></li>
+          <li><b><span data-l="tr">Yoga derslerine canlı eşlik</span><span data-l="en">Live qanun for yoga classes</span></b><span data-l="tr">Bir eğitmenin dersine, pratiğin akışına göre canlı kanun doğaçlamasıyla eşlik.</span><span data-l="en">Live qanun improvisation accompanying another teacher&rsquo;s class, following the flow of the practice.</span></li>
         </ul>
       </div>
       <div>
@@ -389,11 +225,24 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     </div>
   </section>
 
+  <section id="alanlar">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow"><span data-l="tr">Müziğin yanında</span><span data-l="en">Beyond the stage</span></p>
+        <h2><span data-l="tr">Diğer çalışmalar</span><span data-l="en">Other work</span></h2>
+      </div>
+      <div class="paths">
+        <a class="path" href="yoga.html"><h3><span data-l="tr">Yoga &amp; Hareket</span><span data-l="en">Yoga &amp; Movement</span></h3><p><span data-l="tr">Grup ve özel dersler, hareket çalışmaları. Ders sonunda kanunla dinlenme.</span><span data-l="en">Group and private classes and movement work, closing with a rest to qanun.</span></p><span class="more"><span data-l="tr">Sayfaya git →</span><span data-l="en">Visit page →</span></span></a>
+        <a class="path" href="titresimsel-yolculuk.html"><h3><span data-l="tr">Titreşimsel Yolculuk</span><span data-l="en">Sound Healing with Qanun</span></h3><p><span data-l="tr">Uzanarak dinlenen canlı bir ses deneyimi: kanun, gong ve kâseler.</span><span data-l="en">A live sound experience you receive lying down: qanun, gong and bowls.</span></p><span class="more"><span data-l="tr">Sayfaya git →</span><span data-l="en">Visit page →</span></span></a>
+        <a class="path" href="aile-dizilimi.html"><h3><span data-l="tr">Aile Dizilimi</span><span data-l="en">Family Constellations</span></h3><p><span data-l="tr">Kuşaklar boyunca aktarılana, söylenemeyene ve yarım kalan vedalara birlikte, şefkatle bakarız.</span><span data-l="en">Together and with compassion, we look at what was passed down through generations, what could not be said and the farewells left unfinished.</span></p><span class="more"><span data-l="tr">Sayfaya git →</span><span data-l="en">Visit page →</span></span></a>
+        <a class="path" href="su-calismasi.html"><h3><span data-l="tr">Terapötik Su Çalışması</span><span data-l="en">Water Therapy</span></h3><p><span data-l="tr">Sıcak suda, desteklenerek yapılan birebir bir çalışma.</span><span data-l="en">A one-to-one session in warm water, held and supported.</span></p><span class="more"><span data-l="tr">Sayfaya git →</span><span data-l="en">Visit page →</span></span></a>
+      </div>
+    </div>
+  </section>
   <section id="iletisim" class="contact">
     <div class="wrap">
-      <p class="eyebrow">Booking</p>
-      <h2 style="margin-top:14px"><span data-l="tr">Birlikte çalalım</span><span data-l="en">Let's play</span></h2>
-      <p class="prose" style="margin-top:20px"><span data-l="tr">Konser, festival, inziva ve seremoni davetleri için yaz. Türkçe ve İngilizce.</span><span data-l="en">For concerts, festivals, retreats and ceremonies. Turkish and English.</span></p>
+      <p class="eyebrow"><span data-l="tr">İletişim</span><span data-l="en">Contact</span></p>
+      <p class="prose" style="margin-top:20px"><span data-l="tr">Konser, ders, atölye, inziva ve seremoni davetleri için yaz. Türkçe ve İngilizce.</span><span data-l="en">For concerts, classes, workshops, retreats and ceremonies. Turkish and English.</span></p>
       <div class="mail">
         <code id="email">baran.eskili@gmail.com</code>
         <button class="copy" type="button" id="copy-email"><span data-l="tr">Kopyala</span><span data-l="en">Copy</span></button>
@@ -407,98 +256,9 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     </div>
   </section>
 </main>
-
 <footer>
-  <div class="wrap"><span>Baran Eskili</span><span><span data-l="tr">Kanun · Müzik Prodüksiyonu · İstanbul</span><span data-l="en">Qanun · Music Production · Istanbul</span></span></div>
+  <div class="wrap"><span>Baran Eskili</span><span><span data-l="tr">Müzik · Yoga · Titreşimsel Yolculuk · Aile Dizilimi · Su Çalışması · İstanbul</span><span data-l="en">Music · Yoga · Sound Healing · Family Constellations · Water Therapy · Istanbul</span></span></div>
 </footer>
-
-<script>
-(() => {
-  // Dil seçimi
-  const root = document.documentElement;
-  const setLang = (l) => {
-    root.lang = l;
-    document.getElementById('lang-tr').setAttribute('aria-pressed', l === 'tr');
-    document.getElementById('lang-en').setAttribute('aria-pressed', l === 'en');
-    try { localStorage.setItem('be-lang', l); } catch (e) {}
-  };
-  let saved = 'tr';
-  try { saved = localStorage.getItem('be-lang') || 'tr'; } catch (e) {}
-  setLang(saved);
-  document.getElementById('lang-tr').addEventListener('click', () => setLang('tr'));
-  document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
-
-  // E-posta kopyala
-  const btn = document.getElementById('copy-email');
-  btn.addEventListener('click', () => {
-    const text = document.getElementById('email').textContent;
-    const done = () => { btn.dataset.old = btn.innerHTML; btn.textContent = root.lang === 'en' ? 'Copied' : 'Kopyalandı'; setTimeout(() => { btn.innerHTML = btn.dataset.old; }, 1600); };
-    const select = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('email')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
-    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, select); else select();
-  });
-
-  // Hero: kanun telleri. İmleç bir telin üstünden geçince tel titreşir.
-  const cv = document.getElementById('strings');
-  const ctx = cv.getContext('2d');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const COURSES = 26;
-  let W = 0, H = 0, dpr = 1, strings = [], last = null, raf = null;
-  const brass = getComputedStyle(root).getPropertyValue('--brass').trim() || '#d6a24a';
-  const line = getComputedStyle(root).getPropertyValue('--line').trim() || '#3a2c25';
-
-  function resize() {
-    dpr = Math.min(devicePixelRatio || 1, 2);
-    W = cv.clientWidth; H = cv.clientHeight;
-    cv.width = W * dpr; cv.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const top = H * 0.08, gap = (H * 0.86) / (COURSES - 1);
-    strings = Array.from({ length: COURSES }, (_, i) => ({ y: top + i * gap, amp: 0, x: W / 2, t: 0, len: W * (0.55 + 0.45 * (i / (COURSES - 1))) }));
-    draw();
-  }
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    let alive = false;
-    for (const s of strings) {
-      const x0 = W - s.len, x1 = W;
-      const energy = Math.abs(s.amp);
-      ctx.strokeStyle = energy > 0.3 ? brass : line;
-      ctx.globalAlpha = energy > 0.3 ? Math.min(0.9, 0.35 + energy / 10) : 0.55;
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      for (let x = x0; x <= x1; x += 6) {
-        const u = (x - x0) / (x1 - x0);
-        const env = Math.sin(Math.PI * u);
-        const y = s.y + s.amp * env * Math.sin(s.t * 0.9 + u * 3);
-        x === x0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-      // mandal: telin sol ucunda küçük pirinç işaret
-      ctx.globalAlpha = 0.7; ctx.fillStyle = brass;
-      ctx.fillRect(x0, s.y - 1.5, 3, 3);
-      if (energy > 0.05) { s.amp *= 0.955; s.t += 1.4; alive = true; } else s.amp = 0;
-    }
-    ctx.globalAlpha = 1;
-    raf = alive ? requestAnimationFrame(draw) : null;
-  }
-  function pluck(y0, y1, x) {
-    for (const s of strings) {
-      if (x < W - s.len) continue;
-      if ((s.y - y0) * (s.y - y1) <= 0 && y0 !== y1) { s.amp = 7 * Math.sign(y1 - y0 || 1); s.t = 0; }
-    }
-    if (!raf) raf = requestAnimationFrame(draw);
-  }
-  const hero = document.querySelector('.hero');
-  hero.addEventListener('pointermove', (e) => {
-    if (reduce) return;
-    const r = cv.getBoundingClientRect();
-    const p = { x: e.clientX - r.left, y: e.clientY - r.top };
-    if (last) pluck(last.y, p.y, p.x);
-    last = p;
-  });
-  hero.addEventListener('pointerleave', () => { last = null; });
-  new ResizeObserver(resize).observe(cv);
-  resize();
-})();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>
